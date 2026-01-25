@@ -2,7 +2,7 @@
 
 This repository contains the source code for the official documentation site of the **Sagging Royalties** (saggingroyals.com). It is built using [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ This repository contains the source code for the official documentation site of 
     uv sync
     ```
 
-## 🛠 Usage
+## Usage
 
 ### Live Development
 
@@ -42,7 +42,7 @@ To build the static site (output to `site/`):
 uv run mkdocs build
 ```
 
-## 📂 Project Structure
+## Project Structure
 
 -   `mkdocs.yml`: Main configuration file (nav structure, theme settings).
 -   `docs/`: Contains all markdown source files and assets.
@@ -50,7 +50,7 @@ uv run mkdocs build
     -   `assets/`: Images and other static files.
 -   `site/`: The generated static site (ignored by git).
 
-## 📚 Resources & Documentation
+## Resources & Documentation
 
 -   **MkDocs**: [User Guide](https://www.mkdocs.org/user-guide/writing-your-docs/)
 -   **Material for MkDocs**: [Reference](https://squidfunk.github.io/mkdocs-material/reference/)
