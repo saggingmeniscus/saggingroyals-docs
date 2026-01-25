@@ -1,0 +1,34 @@
+site_name: Sagging Royalties Documentation
+site_url: https://docs.saggingroyals.com/
+site_description: Documentation for the Sagging Royalties royalties management system.
+theme:
+  name: material
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+ 
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Getting Started: getting-started.md
+    - Managing Catalog: catalog.md
+    - Uploading Sales: uploading-sales.md
+    - Statements: statements.md
+  - API Reference: api.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - admonition
+  - attr_list
