@@ -1,17 +1,17 @@
 # Sagging Royalties Documentation
 
-This repository contains the source code for the official documentation site of the **Sagging Royalties** ecosystem (Facecards). It is built using [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
+This repository contains the source code for the official documentation site of the **Sagging Royalties** (saggingroyals.com). It is built using [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 -   **Python 3.13+**
--   **[uv](https://github.com/astral-sh/uv)** (recommended package manager)
+-   **[uv](https://github.com/astral-sh/uv)** 
 
 ### Installation
 
-1.  Clone the repository (if you haven't already):
+1.  Clone the repository:
     ```bash
     git clone ...
     cd saggingroyals-docs
