@@ -54,6 +54,25 @@ Retrieve a list of global sales channel types supported by the system (e.g., ING
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+[
+  {
+    "name": "Ingram",
+    "slug": "ingram",
+    "code": "INGRAM",
+    "description": "Ingram Content Group"
+  },
+  {
+    "name": "KDP",
+    "slug": "kdp",
+    "code": "KDP",
+    "description": "Kindle Direct Publishing"
+  }
+]
+```
+
 ### List Channels
 
 Retrieve a list of configured sales channels for the publisher.
@@ -93,6 +112,21 @@ Retrieve a list of configured sales channels for the publisher.
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+[
+  {
+    "name": "Ingram",
+    "slug": "ingram",
+    "type_code": "INGRAM",
+    "type_name": "Ingram",
+    "update_cadence": "MONTHLY",
+    "is_visible": true
+  }
+]
+```
 
 ### Create Sales Channel
 
@@ -150,6 +184,19 @@ JSON Body: `{"type_code": "INGRAM", "name": "Ingram", "slug": "ingram", "update_
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "name": "Ingram",
+  "slug": "ingram",
+  "type_code": "INGRAM",
+  "type_name": "Ingram",
+  "update_cadence": "MONTHLY",
+  "is_visible": true
+}
+```
+
 ## Catalog & Projects
 
 ### List Projects
@@ -192,6 +239,20 @@ List all projects for a publisher.
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+[
+  {
+    "title": "My Book",
+    "slug": "my-book",
+    "publication_date": "2025-01-01",
+    "authors": ["John Doe"],
+    "publications": []
+  }
+]
+```
+
 ### Create Project
 
 Create a new project.
@@ -203,7 +264,7 @@ JSON Body: `{"title": "My Book", "slug": "my-book", "author": "John Doe", "publi
 
 === "Sagging Royalties Client"
     ```bash
-    saggingroyals catalog create your-slug "My Book" --slug my-book --author "John Doe"
+    saggingroyals projects create your-slug "My Book" --slug my-book --author "John Doe"
     ```
 
 === "cURL"
@@ -244,6 +305,18 @@ JSON Body: `{"title": "My Book", "slug": "my-book", "author": "John Doe", "publi
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "title": "My Book",
+  "slug": "my-book",
+  "publication_date": "2025-01-01",
+  "authors": ["John Doe"],
+  "publications": []
+}
+```
+
 ### Get Project Details
 
 Retrieve metadata for a specific project.
@@ -283,6 +356,24 @@ Retrieve metadata for a specific project.
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+{
+  "title": "The Great Gatsby",
+  "slug": "the-great-gatsby",
+  "publication_date": "1925-04-10",
+  "authors": ["F. Scott Fitzgerald"],
+  "publications": [
+    {
+      "isbn": "978-0743273565",
+      "format": "Paperback",
+      "us_list_price": 17.00
+    }
+  ]
+}
+```
 
 ### Create Publication (ISBN)
 
@@ -340,6 +431,16 @@ JSON Body: `{"isbn": "978-1234567890", "format": "Paperback", "price": 19.99, "s
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "isbn": "978-1234567890",
+  "format": "Paperback",
+  "us_list_price": 19.99
+}
+```
+
 ### Export Catalog
 
 Download the catalog as a CSV file.
@@ -384,6 +485,9 @@ Download the catalog as a CSV file.
     .then(res => res.arrayBuffer())
     .then(buffer => fs.writeFileSync("catalog.csv", Buffer.from(buffer)));
     ```
+
+**Response**
+The response is a downloadable CSV file.
 
 ## Sales Data
 
@@ -437,13 +541,25 @@ To upload a CSV or Excel sales report for processing:
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "status": "success",
+  "file_id": 1234,
+  "filename": "2025-10-IsdSales.csv",
+  "message": "File uploaded successfully"
+}
+```
+
 ### Get Sales Ledger
 
 Retrieve raw sales records.
 
 `GET /publishers/{publisher_slug}/sales/ledger`
 
-#### Parameters
+**Parameters**
+
 *   `start_date` (query, date)
 *   `end_date` (query, date)
 *   `channel` (query, string): Channel slug or code
@@ -485,6 +601,22 @@ Retrieve raw sales records.
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "publication_isbn": "978-1234567890",
+    "publication_title": "My Book",
+    "channel": "Ingram",
+    "period_end": "2025-01-31",
+    "quantity": 10,
+    "net_receipts_usd": 150.00
+  }
+]
+```
+
 ## Royalties
 
 ### List Royalty Holders
@@ -524,6 +656,23 @@ Retrieve raw sales records.
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Jane Author",
+    "email": "jane@example.com",
+    "address_line1": "123 Main St",
+    "city": "New York",
+    "state_province": "NY",
+    "postal_code": "10001",
+    "country": "USA"
+  }
+]
+```
 
 ### Create Royalty Holder
 
@@ -574,6 +723,21 @@ JSON Body: `{"name": "Jane Author", "email": "jane@example.com"}`
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "id": 2,
+  "name": "Jane Author",
+  "email": "jane@example.com",
+  "address_line1": null,
+  "city": null,
+  "state_province": null,
+  "postal_code": null,
+  "country": null
+}
+```
+
 ### List Royalty Payments
 
 `GET /publishers/{publisher_slug}/royalty-payments`
@@ -611,6 +775,22 @@ JSON Body: `{"name": "Jane Author", "email": "jane@example.com"}`
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 101,
+    "holder_id": 1,
+    "holder_name": "Jane Author",
+    "amount": 500.00,
+    "currency": "USD",
+    "payment_date": "2025-01-15",
+    "notes": "Check #123"
+  }
+]
+```
 
 ### Record Royalty Payment
 
@@ -664,6 +844,20 @@ JSON Body: `{"holder_id": 1, "amount": 500.00, "date": "2025-01-15", "notes": "C
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "id": 102,
+  "holder_id": 1,
+  "holder_name": "Jane Author",
+  "amount": 500.00,
+  "currency": "USD",
+  "payment_date": "2025-01-15",
+  "notes": null
+}
+```
+
 ### List Royalty Statements
 
 Retrieve a list of generated royalty statements.
@@ -703,6 +897,24 @@ Retrieve a list of generated royalty statements.
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 55,
+    "holder_name": "Jane Author",
+    "period_start": "2024-07-01",
+    "period_end": "2024-12-31",
+    "opening_balance": 0.00,
+    "earnings": 1250.00,
+    "payments": 500.00,
+    "closing_balance": 750.00,
+    "is_locked": true
+  }
+]
+```
 
 ### Generate Statements
 
@@ -755,6 +967,16 @@ JSON Body: `{"period_start": "2024-07-01", "period_end": "2024-12-31"}`
     .then(data => console.log(data));
     ```
 
+**Response**
+
+```json
+{
+  "status": "success",
+  "message": "Statement generation queued for 12 holders",
+  "generated_count": 12
+}
+```
+
 ### Download Statement PDF
 
 Download the PDF file for a specific statement.
@@ -799,6 +1021,9 @@ Download the PDF file for a specific statement.
     .then(buffer => fs.writeFileSync("statement.pdf", Buffer.from(buffer)));
     ```
 
+**Response**
+The response is a downloadable PDF file.
+
 ## Users
 
 ### List Publisher Users
@@ -840,6 +1065,27 @@ List users with access to the publisher account.
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "email": "owner@example.com",
+    "role": "OWNER",
+    "first_name": "Publisher",
+    "last_name": "Owner"
+  },
+  {
+    "id": 2,
+    "email": "editor@example.com",
+    "role": "EDITOR",
+    "first_name": "Editor",
+    "last_name": "User"
+  }
+]
+```
 
 ### Invite User
 
@@ -891,3 +1137,12 @@ JSON Body: `{"email": "editor@example.com", "role": "editor"}`
     .then(response => response.json())
     .then(data => console.log(data));
     ```
+
+**Response**
+
+```json
+{
+  "status": "success",
+  "message": "Invitation sent to editor@example.com"
+}
+```
