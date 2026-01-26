@@ -10,14 +10,17 @@ Statements are usually generated on a schedule (e.g., semi-annually).
 
 You can also generate them per-royalty-holder on the royalty holder detail page. To get there, go to Royalty Reports and click "View Details" on the royalty holder in question.
 
-## Reviewing Statements
+## Auditing
 
-You can review draft statements before they are published to authors. Check for:
+Because royalty statements are immediately visible to authors upon generation, accuracy must be verified **before** the statements are generated.
 
-*   Unassigned sales
-*   Negative balances
-*   Missing payment details
+Prior to generation, you should audit:
 
-## Publishing
+*   **Sales Reports**: Confirm all reports for the period are uploaded and processed without errors.
+*   **Project Settings**: Verify royalty rates, advances, and author assignments are correct.
 
-Once reviewed, you can "Publish" statements. This makes them visible to your authors in their portal.
+### Regenerating Statements
+
+If you discover an error after a statement has been generated, you can regenerate it.
+
+**Note**: Regenerating a statement will completely replace the old version. Be sure to correct the underlying issue (e.g., fixing a Sales Report or Project setting) before running the generation again.
