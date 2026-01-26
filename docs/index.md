@@ -3,10 +3,10 @@
 **Sagging Royalties** is a specialized royalty management and reporting platform designed for independent publishers and small presses.
 It simplifies the complex task of aggregating sales from multiple channels (like Asterism, Ingram, Amazon KDP, and direct sales) and generating transparent, accurate royalty statements for your authors.
 
-## What is it?
+## Who Is It For?
 
-*   **For Publishers**: A central hub to track your catalog, upload standardized sales reports, and calculate what you owe.
-*   **For Authors**: It's a portal where authors and other royalty-holders can log in to see their sales in near real-time and download their royalty statements.
+*   **Publishers**: Track your catalog, upload standardized sales reports, see sales analytics,  calculate what you owe, and generate royalty reports with a click.
+*   **Authors and Other Royalty Holders**: Log in to see sales data and download royalty statements, rather than waiting on publishers to send them.
 
 ## Key Features
 
@@ -17,4 +17,4 @@ It simplifies the complex task of aggregating sales from multiple channels (like
 
 ## Getting Help
 
-This documentation is here to help you get set up and make the most of the platform. If you can't find what you're looking for, please contact our support team.
+This documentation is here to help you get set up and make the most of the platform. If you can't find what you're looking for, please contact support@saggingroyals.com.
