@@ -25,11 +25,13 @@ After logging in to the dashboard, complete these initial setup steps:
 
 ### Check Your Publisher Settings
 Click the **Settings** tab (or gear icon) to review your profile.
+
 *   **Logo**: Upload your press logo, which will appear on royalty statements and elsewhere.
 *   **Contact Info**: Ensure your administrative email and website are correct.
 
 ### Import Your Catalog
 The system needs to know about your books before it can parse sales reports.
+
 1.  Navigate to the **Catalog** tab.
 2.  Click **Import CSV**.
 3.  Upload a CSV file containing your ISBNs, titles, and format details (you can do an export first to get an empty CSV file with the right columns), or enter them manually. We may be able to help populate your catalog for you if you point us to an appropriate data source.
@@ -37,6 +39,7 @@ The system needs to know about your books before it can parse sales reports.
 
 ### Set Up Your Sales Channels
 Define where your sales data comes from.
+
 1.  Navigate to **Sales Channels**.
 2.  Click **Add Channel**.
 3.  Select a provider (e.g., **Ingram**, **KDP**, **Asterism**).
