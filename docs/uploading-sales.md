@@ -5,6 +5,7 @@ The core function of Sagging Royalties is aggregating your sales data.
 ## Supported Formats
 
 We support standard reports from:
+
 *   Asterism
 *   Ingram Lightning Source / Core Source
 *   Amazon KDP
@@ -22,6 +23,4 @@ We support standard reports from:
 
 The system will parse the file, match ISBNs to your catalog, and calculate royalties based on your formulas.
 
-## Errors
 
-If the system encounters ISBNs not in your catalog or unrecognized formats, it will flag these rows for review.
