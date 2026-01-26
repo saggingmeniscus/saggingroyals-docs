@@ -29,6 +29,6 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - admonition
   - attr_list
