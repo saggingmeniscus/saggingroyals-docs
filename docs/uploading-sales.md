@@ -13,9 +13,12 @@ We support standard reports from:
 *   Snipcart
 *   And more...
 
+Most reports are Sales Reports, which include sales quantities of publications for a period 
+of time. Some include payment information useful for calculating net earnings. However, some vendors offer separate reports with payment information.
+
 ## How to Upload
 
-1.  Navigate to **Sales > Upload Report**.
+1.  Navigate to **Upload Reports** in the publisher portal and click on either Upload Sales Report or Upload Payment Report, depending on the kind of report you have.
 2.  Select the **Channel** (e.g., Ingram).
 3.  Choose the **Format** you are uploading.
 4.  Select the file from your computer.
