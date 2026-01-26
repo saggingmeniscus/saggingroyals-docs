@@ -33,9 +33,8 @@ Click the **Settings** tab (or gear icon) to review your profile.
 The system needs to know about your books before it can parse sales reports.
 
 1.  Navigate to the **Catalog** tab.
-2.  Click **Import CSV**.
-3.  Upload a CSV file containing your ISBNs, titles, and format details (you can do an export first to get an empty CSV file with the right columns), or enter them manually. We may be able to help populate your catalog for you if you point us to an appropriate data source.
-4.  Part of entering the catalog is adding royalty formulas and shares for each title. See [/catalog.html](Catalog) for details.
+2.  To upload a CSV file containing your ISBNs, titles, and format details, first click on **Export CSV** to get an empty CSV file with the right columns, fill out the spreadsheet, and upload — or you can simply enter them manually. Also, we may be able to populate your catalog for you, if you point us to an appropriate data source.
+4.  Once you've entered the basic information, you'll need to add royalty formulas and shares for each title. See [/catalog.html](Catalog) for details.
 
 ### Set Up Your Sales Channels
 Define where your sales data comes from.
@@ -69,3 +68,7 @@ You can invite your authors to the portal so they can view their own dashboards.
 2.  Click **Invite User**.
 3.  Enter their email and select the **Royalty Holder** they represent.
 4.  They will receive an email to set their password and access their statements.
+
+## Maintenance
+
+You'll want to upload sales reports as soon as they are available, so royalty holders can see recent behavior. Note also that sales can be entered manually —  direct sales from events, for instance.
