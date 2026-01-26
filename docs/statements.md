@@ -13,6 +13,7 @@ You can also generate them per-royalty-holder on the royalty holder detail page.
 ## Reviewing Statements
 
 You can review draft statements before they are published to authors. Check for:
+
 *   Unassigned sales
 *   Negative balances
 *   Missing payment details
