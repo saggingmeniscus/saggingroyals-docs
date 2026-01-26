@@ -59,7 +59,7 @@ Once sales are uploaded and mapped to your catalog:
 2.  Click **Generate Statements**.
 3.  Select the **Start Date** and **End Date** for the period (e.g., Jan 1 - Jun 30).
 4.  Click **Generate**.
-    *   *Processing happens in the background. You will be notified when PDF statements are ready for review.*
+    *   Processing happens in the background and may take a few minutes.
 
 ## Invite Royalty Holders
 You can invite your authors to the portal so they can view their own dashboards.
