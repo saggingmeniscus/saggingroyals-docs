@@ -23,20 +23,20 @@ Once you receive your invitation email, click the link to set your password. You
 
 After logging in to the dashboard, complete these initial setup steps:
 
-### Check Your Publisher Settings
+## Check Your Publisher Settings
 Click the **Settings** tab (or gear icon) to review your profile.
 
 *   **Logo**: Upload your press logo, which will appear on royalty statements and elsewhere.
 *   **Contact Info**: Ensure your administrative email and website are correct.
 
-### Import Your Catalog
+## Import Your Catalog
 The system needs to know about your books before it can parse sales reports.
 
 1.  Navigate to the **Catalog** tab.
 2.  To upload a CSV file containing your ISBNs, titles, and format details, first click on **Export CSV** to get an empty CSV file with the right columns, fill out the spreadsheet, and upload — or you can simply enter them manually. Also, we may be able to populate your catalog for you, if you point us to an appropriate data source.
 4.  Once you've entered the basic information, you'll need to add royalty formulas and shares for each title. See [Catalog](catalog.md) for details.
 
-### Set Up Your Sales Channels
+## Set Up Your Sales Channels
 Define where your sales data comes from.
 
 1.  Navigate to **Sales Channels**.

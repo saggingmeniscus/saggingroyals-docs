@@ -15,9 +15,9 @@ nav:
   - Home: index.md
   - User Guide:
     - Getting Started: getting-started.md
-    - Managing Catalog: catalog.md
+    - Managing Your Catalog: catalog.md
     - Uploading Sales: uploading-sales.md
-    - Statements: statements.md
+    - Royalty Statements: statements.md
   - API Reference: api.md
 
 markdown_extensions:
