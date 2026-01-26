@@ -15,6 +15,8 @@ Obtain your API Key from your user profile page (https://saggingroyals.com/profi
 **Header:**
 `X-API-Key: <YOUR_API_KEY>`
 
+
+
 ## Sales Channels
 
 ### List Channel Types
@@ -83,13 +85,13 @@ Retrieve a list of configured sales channels for the publisher.
 
 === "Sagging Royalties Client"
     ```bash
-    saggingroyals channels list sagging-meniscus
+    saggingroyals channels list your-slug
     ```
 
 === "cURL"
     ```bash
     curl -H "X-API-Key: <YOUR_API_KEY>" \
-         https://saggingroyals.com/api/publishers/sagging-meniscus/channels
+         https://saggingroyals.com/api/publishers/your-slug/channels
     ```
 
 === "Python"
@@ -98,7 +100,7 @@ Retrieve a list of configured sales channels for the publisher.
 
     headers = {"X-API-Key": "<YOUR_API_KEY>"}
     response = requests.get(
-        "https://saggingroyals.com/api/publishers/sagging-meniscus/channels",
+        "https://saggingroyals.com/api/publishers/your-slug/channels",
         headers=headers
     )
     print(response.json())
@@ -106,7 +108,7 @@ Retrieve a list of configured sales channels for the publisher.
 
 === "JavaScript"
     ```javascript
-    fetch("https://saggingroyals.com/api/publishers/sagging-meniscus/channels", {
+    fetch("https://saggingroyals.com/api/publishers/your-slug/channels", {
       headers: { "X-API-Key": "<YOUR_API_KEY>" }
     })
     .then(response => response.json())
