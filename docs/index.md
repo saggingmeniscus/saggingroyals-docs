@@ -5,8 +5,8 @@ It simplifies the complex task of aggregating sales from multiple channels (like
 
 ## Who Is It For?
 
-*   **Publishers**: Track your catalog, upload standardized sales reports, see sales analytics,  calculate what you owe, and generate royalty reports with a click.
-*   **Authors and Other Royalty Holders**: Log in to see sales data and download royalty statements, rather than waiting on publishers to send them.
+*   **Publishers** can track their catalog, upload standardized sales reports, see sales analytics,  calculate what they owe, and generate royalty reports with a click.
+*   **Authors and Other Royalty Holders** can log in to see the latest sales data and download royalty statements, rather than waiting on publishers to send them.
 
 ## Key Features
 
