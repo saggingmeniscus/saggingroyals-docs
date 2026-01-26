@@ -17,4 +17,4 @@ It simplifies the complex task of aggregating sales from multiple channels (like
 
 ## Getting Help
 
-This documentation is here to help you get set up and make the most of the platform. If you can't find what you're looking for, please contact support@saggingroyals.com.
+This documentation is here to help you get set up and make the most of the platform. If you can't find what you're looking for, please contact [support@saggingroyals.com](mailto:support@saggingroyals.com).

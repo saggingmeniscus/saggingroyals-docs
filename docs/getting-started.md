@@ -2,11 +2,9 @@
 
 Welcome to Sagging Royalties! We are currently in an invite-only phase. This guide will walk you through the process of getting your press set up on the platform.
 
-## Sign Up
-
 At this time, there is no public self-service sign-up form. To create a new publisher account,  contact Sagging Royalties staff, and we'll set you up.
 
-Eemail [support@saggingroyals.com](mailto:support@saggingroyals.com) with the following information:
+Email [support@saggingroyals.com](mailto:support@saggingroyals.com) with the following information:
 
 *   **Publisher Name**: The official name of your press.
 *   **Contact Email**: The primary email address for administrative notifications.
@@ -20,12 +18,8 @@ Once we receive your request, we will:
 *  Create your **Admin User** account.
 *  Send you an invitation email to set your password and log in.
 
-##  Log In
-
 Once you receive your invitation email, click the link to set your password. You can then log in at:
 [https://saggingroyals.com/login](https://saggingroyals.com/login)
-
-## Configure Your Press
 
 After logging in to the dashboard, complete these initial setup steps:
 
