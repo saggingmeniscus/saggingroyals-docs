@@ -7,7 +7,7 @@ The core function of Sagging Royalties is aggregating your sales data.
 We support standard reports from:
 
 *   Asterism
-*   Ingram Lightning Source / Core Source
+*   Ingram LightningSource / IngramSpark
 *   Amazon KDP
 *   Draft2Digital
 *   Snipcart
