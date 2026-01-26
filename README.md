@@ -50,6 +50,10 @@ uv run mkdocs build
     -   `assets/`: Images and other static files.
 -   `site/`: The generated static site (ignored by git).
 
+## Deployment
+
+-   See `netlify.toml`
+
 ## Resources & Documentation
 
 -   **MkDocs**: [User Guide](https://www.mkdocs.org/user-guide/writing-your-docs/)
