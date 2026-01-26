@@ -34,7 +34,7 @@ The system needs to know about your books before it can parse sales reports.
 
 1.  Navigate to the **Catalog** tab.
 2.  To upload a CSV file containing your ISBNs, titles, and format details, first click on **Export CSV** to get an empty CSV file with the right columns, fill out the spreadsheet, and upload — or you can simply enter them manually. Also, we may be able to populate your catalog for you, if you point us to an appropriate data source.
-4.  Once you've entered the basic information, you'll need to add royalty formulas and shares for each title. See [/catalog.html](Catalog) for details.
+4.  Once you've entered the basic information, you'll need to add royalty formulas and shares for each title. See [Catalog](catalog.md) for details.
 
 ### Set Up Your Sales Channels
 Define where your sales data comes from.
@@ -50,7 +50,7 @@ Define where your sales data comes from.
 ##  Upload Sales Reports
 Navigate to the **Sales** section to upload a report. See [Uploading Sales](uploading-sales.md) for detailed instructions.
 
-Note: as part of the onboarding process, we can help you with bulk uploads of your historical data. Our [commandline client](/api.html) can also be used to upload multiple reports at a time.
+Note: as part of the onboarding process, we can help you with bulk uploads of your historical data. Our [commandline client](api.md) can also be used to upload multiple reports at a time.
 
 ## Generate Royalty Reports
 Once sales are uploaded and mapped to your catalog:
