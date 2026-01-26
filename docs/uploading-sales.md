@@ -1,6 +1,6 @@
 # Uploading Sales Reports
 
-The core function of Sagging Royalties is aggregating your sales data.
+A core function of Sagging Royalties is aggregating your sales data.
 
 ## Supported Formats
 
