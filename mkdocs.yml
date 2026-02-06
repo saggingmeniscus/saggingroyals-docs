@@ -17,6 +17,8 @@ nav:
     - Getting Started: getting-started.md
     - Managing Your Catalog: catalog.md
     - Uploading Sales: uploading-sales.md
+    - Payments: payments.md
+    - Expense Tracking: expenses.md
     - Royalty Statements: statements.md
   - API Reference: api.md
 

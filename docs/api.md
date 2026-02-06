@@ -1026,6 +1026,484 @@ Download the PDF file for a specific statement.
 **Response**
 The response is a downloadable PDF file.
 
+## Incoming Payments
+
+Track payments received from sales channels (distributor payouts).
+
+### List Payment Ledger
+
+`GET /publishers/{publisher_slug}/payments/ledger`
+
+**Parameters**
+
+*   `channel` (query, string): Filter by channel slug
+*   `date_start` (query, date): Filter by start date
+*   `date_end` (query, date): Filter by end date
+
+**Request**
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals payments list your-slug --channel ingram
+    ```
+
+=== "cURL"
+    ```bash
+    curl -H "X-API-Key: <YOUR_API_KEY>" \
+         "https://saggingroyals.com/api/publishers/your-slug/payments/ledger?channel=ingram"
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    params = {"channel": "ingram"}
+    response = requests.get(
+        "https://saggingroyals.com/api/publishers/your-slug/payments/ledger",
+        headers=headers,
+        params=params
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const params = new URLSearchParams({ channel: "ingram" });
+    fetch(`https://saggingroyals.com/api/publishers/your-slug/payments/ledger?${params}`, {
+      headers: { "X-API-Key": "<YOUR_API_KEY>" }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "channel": "ingram",
+    "period_end": "2025-03-31",
+    "payout_amount": 1234.56,
+    "payout_currency": "USD"
+  }
+]
+```
+
+### Upload Payment Report
+
+Upload a payment report file from a sales channel.
+
+`POST /publishers/{publisher_slug}/payments/reports`
+
+**Request**
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals payments upload your-slug ingram ./ingram-payment-2025-03.csv
+    ```
+
+=== "cURL"
+    ```bash
+    curl -X POST "https://saggingroyals.com/api/publishers/your-slug/payments/reports" \
+         -H "X-API-Key: <YOUR_API_KEY>" \
+         -F "channel=ingram" \
+         -F "file=@./ingram-payment-2025-03.csv"
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    url = "https://saggingroyals.com/api/publishers/your-slug/payments/reports"
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    files = {"file": open("ingram-payment-2025-03.csv", "rb")}
+    data = {"channel": "ingram"}
+
+    response = requests.post(url, headers=headers, data=data, files=files)
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const formData = new FormData();
+    formData.append("channel", "ingram");
+    formData.append("file", fileInput.files[0]);
+
+    fetch("https://saggingroyals.com/api/publishers/your-slug/payments/reports", {
+      method: "POST",
+      headers: { "X-API-Key": "<YOUR_API_KEY>" },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+### Record Payment Manually
+
+Manually record a payment received from a channel.
+
+`POST /publishers/{publisher_slug}/payments/records`
+
+**Request**
+JSON Body: `{"channel": "ingram", "payout_amount": 1234.56, "payout_currency": "USD", "period_end": "2025-03-31"}`
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals payments add your-slug --channel ingram --amount 1234.56 --date 2025-03-31
+    ```
+
+=== "cURL"
+    ```bash
+    curl -X POST "https://saggingroyals.com/api/publishers/your-slug/payments/records" \
+         -H "X-API-Key: <YOUR_API_KEY>" \
+         -H "Content-Type: application/json" \
+         -d '{"channel": "ingram", "payout_amount": 1234.56, "payout_currency": "USD", "period_end": "2025-03-31"}'
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    url = "https://saggingroyals.com/api/publishers/your-slug/payments/records"
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    data = {
+        "channel": "ingram",
+        "payout_amount": 1234.56,
+        "payout_currency": "USD",
+        "period_end": "2025-03-31"
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    fetch("https://saggingroyals.com/api/publishers/your-slug/payments/records", {
+      method: "POST",
+      headers: {
+        "X-API-Key": "<YOUR_API_KEY>",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        channel: "ingram",
+        payout_amount: 1234.56,
+        payout_currency: "USD",
+        period_end: "2025-03-31"
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+## Expenses
+
+Track project costs that reduce the royalty pool for net-receipts projects. See [Expense Tracking](expenses.md) for a detailed explanation.
+
+### List Expenses
+
+`GET /publishers/{publisher_slug}/expenses`
+
+**Parameters**
+
+*   `project_slug` (query, string): Filter by project
+*   `category` (query, string): Filter by category (`production`, `editorial`, `marketing`, `distribution_fulfillment`, `other`)
+
+**Request**
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals expenses list your-slug --project my-book
+    ```
+
+=== "cURL"
+    ```bash
+    curl -H "X-API-Key: <YOUR_API_KEY>" \
+         "https://saggingroyals.com/api/publishers/your-slug/expenses?project_slug=my-book"
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    params = {"project_slug": "my-book"}
+    response = requests.get(
+        "https://saggingroyals.com/api/publishers/your-slug/expenses",
+        headers=headers,
+        params=params
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    const params = new URLSearchParams({ project_slug: "my-book" });
+    fetch(`https://saggingroyals.com/api/publishers/your-slug/expenses?${params}`, {
+      headers: { "X-API-Key": "<YOUR_API_KEY>" }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+```json
+[
+  {
+    "id": 1,
+    "project_slug": "my-book",
+    "project_title": "My Book",
+    "description": "Cover design",
+    "category": "production",
+    "amount": 1500.00,
+    "quantity": null,
+    "unit_cost": null,
+    "effective_date": "2025-03-15",
+    "sales_channel_name": null,
+    "notes": ""
+  }
+]
+```
+
+### Create Expense
+
+`POST /publishers/{publisher_slug}/expenses`
+
+**Request**
+JSON Body:
+
+```json
+{
+  "project_slug": "my-book",
+  "description": "Cover design",
+  "category": "production",
+  "amount": 1500.00,
+  "effective_date": "2025-03-15",
+  "quantity": null,
+  "sales_channel_id": null,
+  "notes": "Paid to designer Jane Smith"
+}
+```
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals expenses create your-slug --project my-book \
+        --description "Cover design" --category production \
+        --amount 1500.00 --date 2025-03-15 \
+        --notes "Paid to designer Jane Smith"
+    ```
+
+=== "cURL"
+    ```bash
+    curl -X POST "https://saggingroyals.com/api/publishers/your-slug/expenses" \
+         -H "X-API-Key: <YOUR_API_KEY>" \
+         -H "Content-Type: application/json" \
+         -d '{"project_slug": "my-book", "description": "Cover design", "category": "production", "amount": 1500.00, "effective_date": "2025-03-15"}'
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    url = "https://saggingroyals.com/api/publishers/your-slug/expenses"
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    data = {
+        "project_slug": "my-book",
+        "description": "Cover design",
+        "category": "production",
+        "amount": 1500.00,
+        "effective_date": "2025-03-15"
+    }
+
+    response = requests.post(url, headers=headers, json=data)
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    fetch("https://saggingroyals.com/api/publishers/your-slug/expenses", {
+      method: "POST",
+      headers: {
+        "X-API-Key": "<YOUR_API_KEY>",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        project_slug: "my-book",
+        description: "Cover design",
+        category: "production",
+        amount: 1500.00,
+        effective_date: "2025-03-15"
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+```json
+{
+  "id": 1,
+  "project_slug": "my-book",
+  "project_title": "My Book",
+  "description": "Cover design",
+  "category": "production",
+  "amount": 1500.00,
+  "quantity": null,
+  "unit_cost": null,
+  "effective_date": "2025-03-15",
+  "sales_channel_name": null,
+  "notes": ""
+}
+```
+
+### Get Expense
+
+`GET /publishers/{publisher_slug}/expenses/{expense_id}`
+
+**Request**
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals expenses get your-slug 1
+    ```
+
+=== "cURL"
+    ```bash
+    curl -H "X-API-Key: <YOUR_API_KEY>" \
+         https://saggingroyals.com/api/publishers/your-slug/expenses/1
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    response = requests.get(
+        "https://saggingroyals.com/api/publishers/your-slug/expenses/1",
+        headers=headers
+    )
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    fetch("https://saggingroyals.com/api/publishers/your-slug/expenses/1", {
+      headers: { "X-API-Key": "<YOUR_API_KEY>" }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+Same format as the Create Expense response.
+
+### Update Expense
+
+`PATCH /publishers/{publisher_slug}/expenses/{expense_id}`
+
+Only include fields you want to change.
+
+**Request**
+JSON Body: `{"amount": 1750.00, "notes": "Revised invoice"}`
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals expenses update your-slug 1 --amount 1750.00 --notes "Revised invoice"
+    ```
+
+=== "cURL"
+    ```bash
+    curl -X PATCH "https://saggingroyals.com/api/publishers/your-slug/expenses/1" \
+         -H "X-API-Key: <YOUR_API_KEY>" \
+         -H "Content-Type: application/json" \
+         -d '{"amount": 1750.00, "notes": "Revised invoice"}'
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    url = "https://saggingroyals.com/api/publishers/your-slug/expenses/1"
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+    data = {"amount": 1750.00, "notes": "Revised invoice"}
+
+    response = requests.patch(url, headers=headers, json=data)
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    fetch("https://saggingroyals.com/api/publishers/your-slug/expenses/1", {
+      method: "PATCH",
+      headers: {
+        "X-API-Key": "<YOUR_API_KEY>",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        amount: 1750.00,
+        notes: "Revised invoice"
+      })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+Same format as the Create Expense response, with updated fields.
+
+### Delete Expense
+
+`DELETE /publishers/{publisher_slug}/expenses/{expense_id}`
+
+**Request**
+
+=== "Sagging Royalties Client"
+    ```bash
+    saggingroyals expenses delete your-slug 1
+    ```
+
+=== "cURL"
+    ```bash
+    curl -X DELETE "https://saggingroyals.com/api/publishers/your-slug/expenses/1" \
+         -H "X-API-Key: <YOUR_API_KEY>"
+    ```
+
+=== "Python"
+    ```python
+    import requests
+
+    url = "https://saggingroyals.com/api/publishers/your-slug/expenses/1"
+    headers = {"X-API-Key": "<YOUR_API_KEY>"}
+
+    response = requests.delete(url, headers=headers)
+    print(response.json())
+    ```
+
+=== "JavaScript"
+    ```javascript
+    fetch("https://saggingroyals.com/api/publishers/your-slug/expenses/1", {
+      method: "DELETE",
+      headers: { "X-API-Key": "<YOUR_API_KEY>" }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    ```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "message": "Expense deleted."
+}
+```
+
 ## Users
 
 ### List Publisher Users
